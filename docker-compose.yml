@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  stremio-jellyfin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stremio-jellyfin
+    ports:
+      - "60421:60421"
+    restart: unless-stopped
+    networks:
+      - hassio
+
+networks:
+  hassio:
+    external: true
