@@ -14,8 +14,4 @@ services:
       JELLYFIN_SERVER: ""
     restart: unless-stopped
     networks:
-      - hassio
-
-networks:
-  hassio:
-    external: true
+      - host
