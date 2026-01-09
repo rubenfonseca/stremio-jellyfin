@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  stremio-jellyfin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stremio-jellyfin
+    # When using host networking, published ports are ignored; container binds directly to host.
+    ports:
+      - "60421:60421"
+    environment:
+      JELLYFIN_USER: ""
+      JELLYFIN_PASSWORD: ""
+      JELLYFIN_SERVER: ""
+    restart: unless-stopped
+    network_mode: "host"
