@@ -8,6 +8,10 @@ services:
     container_name: stremio-jellyfin
     ports:
       - "60421:60421"
+    environment:
+      JELLYFIN_USER: ""
+      JELLYFIN_PASSWORD: ""
+      JELLYFIN_SERVER: ""
     restart: unless-stopped
     networks:
       - hassio
